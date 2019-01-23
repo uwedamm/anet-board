@@ -13,7 +13,7 @@
   but WITHOUT ANY WARRANTY; without even the implied warranty of
   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
   Lesser General Public License for more details.
-
+566555
   You should have received a copy of the GNU Lesser General
   Public License along with this library; if not, write to the
   Free Software Foundation, Inc., 59 Temple Place, Suite 330,
@@ -36,28 +36,35 @@
 #define NOT_A_PORT 0
 
 #define NOT_ON_TIMER 0
-#define TIMER0A 1
-#define TIMER0B 2
-#define TIMER1A 3
-#define TIMER1B 4
-#define TIMER2  5
-#define TIMER2A 6
-#define TIMER2B 7
 
-#define TIMER3A 8
-#define TIMER3B 9
-#define TIMER3C 10
-#define TIMER4A 11
-#define TIMER4B 12
-#define TIMER4C 13
-#define TIMER5A 14
-#define TIMER5B 15
-#define TIMER5C 16
+/* proposal from: https://www.thingiverse.com/groups/anet-a8-prusa-i3/forums/general/topic:26351 */
+/*
+  #define TIMER0A 1
+  #define TIMER0B 2
+  #define TIMER1A 3
+  #define TIMER1B 4
+  #define TIMER2  5
+  #define TIMER2A 6
+  #define TIMER2B 7
 
-const static uint8_t SS   = 4;
-const static uint8_t MOSI = 5;
-const static uint8_t MISO = 6;
-const static uint8_t SCK  = 7;
+  #define TIMER3A 8
+  #define TIMER3B 9
+  #define TIMER3C 10
+  #define TIMER4A 11
+  #define TIMER4B 12
+  #define TIMER4C 13
+  #define TIMER5A 14
+  #define TIMER5B 15
+  #define TIMER5C 16
+*/
+
+/* static before const to avoid: */
+/* .../Arduino/hardware/anet/avr/variants/sanguino/pins_arduino.h:61:1: warning: 'static' is not at beginning of declaration [-Wold-style-declaration] */
+static const uint8_t SS   = 4;
+static const uint8_t SS   = 4;
+static const uint8_t MOSI = 5;
+static const uint8_t MISO = 6;
+static const uint8_t SCK  = 7;
 
 static const uint8_t SDA = 17;
 static const uint8_t SCL = 16;
